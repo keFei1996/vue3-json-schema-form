@@ -5,7 +5,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent } from 'vue'
 
 const PropsType = {
   msg: String,
@@ -13,15 +13,15 @@ const PropsType = {
     type: Number,
     required: true,
   },
-} as const;
+} as const
 
 export default defineComponent({
-  name: "HelloWorld",
+  name: 'HelloWorld',
   props: PropsType,
   mounted() {
-    this.age;
+    this.age
   },
-});
+})
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

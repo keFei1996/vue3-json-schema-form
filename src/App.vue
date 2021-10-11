@@ -1,15 +1,15 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png" />
   <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" :age="12" />
-  <span>{{ age }}</span>
+  <span>{{ state.name }}</span>
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType } from 'vue';
-import HelloWorld from './components/HelloWorld.vue';
+import { defineComponent, PropType } from 'vue'
+import HelloWorld from './components/HelloWorld.vue'
 
 interface Config {
-  name: string;
+  name: string
 }
 
 export default defineComponent({
@@ -27,9 +27,20 @@ export default defineComponent({
     HelloWorld,
   },
   data() {
-    return {};
+    return {}
   },
-});
+  setup(props, { slots, attrs, emit }) {
+    let name = 'zhu'
+
+    setInterval(() => {
+      name += '1'
+    }, 1000)
+
+    return {
+      name,
+    }
+  },
+})
 </script>
 
 <style>
