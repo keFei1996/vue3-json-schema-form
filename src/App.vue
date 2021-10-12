@@ -1,11 +1,11 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png" />
   <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" :age="12" />
-  <span>{{ state.name }}</span>
+  <span>{{ nameRef }}:{{ computedNameRef }}</span>
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType } from 'vue'
+import { defineComponent, PropType, reactive, ref, computed } from 'vue'
 import HelloWorld from './components/HelloWorld.vue'
 
 interface Config {
@@ -26,18 +26,26 @@ export default defineComponent({
   components: {
     HelloWorld,
   },
-  data() {
-    return {}
+  mounted() {
+    console.log(this.nameRef, '------')
   },
   setup(props, { slots, attrs, emit }) {
-    let name = 'zhu'
+    // const state = reactive({
+    //   name: 'zhu',
+    // })
+    const nameRef = ref('zhu')
+
+    const computedNameRef = computed(() => {
+      return nameRef.value + '2'
+    })
 
     setInterval(() => {
-      name += '1'
+      nameRef.value += '1'
     }, 1000)
 
     return {
-      name,
+      nameRef,
+      computedNameRef,
     }
   },
 })
