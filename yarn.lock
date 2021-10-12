@@ -1492,22 +1492,7 @@
   resolved "https://registry.npm.taobao.org/@vue/babel-helper-vue-transform-on/download/@vue/babel-helper-vue-transform-on-1.0.2.tgz?cache=0&sync_timestamp=1610812390314&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40vue%2Fbabel-helper-vue-transform-on%2Fdownload%2F%40vue%2Fbabel-helper-vue-transform-on-1.0.2.tgz#9b9c691cd06fc855221a2475c3cc831d774bc7dc"
   integrity sha1-m5xpHNBvyFUiGiR1w8yDHXdLx9w=
 
-"@vue/babel-plugin-jsx@^1.0.3":
-  version "1.1.0"
-  resolved "https://registry.npmmirror.com/@vue/babel-plugin-jsx/download/@vue/babel-plugin-jsx-1.1.0.tgz?cache=0&sync_timestamp=1632956458710&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2F%40vue%2Fbabel-plugin-jsx%2Fdownload%2F%40vue%2Fbabel-plugin-jsx-1.1.0.tgz#eb73871cbe468bc12141441a0052d8948ac4f67d"
-  integrity sha1-63OHHL5Gi8EhQUQaAFLYlIrE9n0=
-  dependencies:
-    "@babel/helper-module-imports" "^7.0.0"
-    "@babel/plugin-syntax-jsx" "^7.0.0"
-    "@babel/template" "^7.0.0"
-    "@babel/traverse" "^7.0.0"
-    "@babel/types" "^7.0.0"
-    "@vue/babel-helper-vue-transform-on" "^1.0.2"
-    camelcase "^6.0.0"
-    html-tags "^3.1.0"
-    svg-tags "^1.0.0"
-
-"@vue/babel-plugin-jsx@^1.1.0":
+"@vue/babel-plugin-jsx@^1.0.3", "@vue/babel-plugin-jsx@^1.1.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@vue/babel-plugin-jsx/-/babel-plugin-jsx-1.1.0.tgz#eb73871cbe468bc12141441a0052d8948ac4f67d"
   integrity sha512-RGesLuTa+/0dHw7Ai3oQK0PoZbHPgtnjRQMTA/RRarqTWqMcFQ1BWYW47nSCkJAPYfd9hkUC0BWqokiOlJjJyg==
@@ -2144,6 +2129,11 @@ ajv-errors@^1.0.0:
   version "1.0.1"
   resolved "https://registry.nlark.com/ajv-errors/download/ajv-errors-1.0.1.tgz#f35986aceb91afadec4102fbd85014950cefa64d"
   integrity sha1-81mGrOuRr63sQQL72FAUlQzvpk0=
+
+ajv-i18n@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/ajv-i18n/-/ajv-i18n-4.1.0.tgz#464b5bfe2c7e44df6af3c7e24cc3f43f74ad5b39"
+  integrity sha512-GmRKPqWbZc+wn77IVPixJ336h9opyWSd4iTEGv825jxbccN1JKVEG/JnJX9wxYa1/yPmT/4v/YZN3ymmHwY4ag==
 
 ajv-keywords@^3.1.0, ajv-keywords@^3.4.1, ajv-keywords@^3.5.2:
   version "3.5.2"
