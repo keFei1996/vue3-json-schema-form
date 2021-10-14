@@ -1,29 +1,41 @@
-import { defineComponent, h, reactive } from 'vue'
-import HelloWorld from '@/components/HelloWorld.vue'
+import { defineComponent, h, reactive, ref, Ref } from 'vue'
 
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const img = require('./assets/logo.png')
+import { createUseStyles } from 'vue-jss'
 
-function returnHelloWorld(num: number) {
-  return <HelloWorld age={num} />
+import MonacoEditor from '@/components/MonacoEditor'
+
+function toJson(data: any) {
+  return JSON.stringify(data, null, 2)
 }
+
+const schema = {
+  type: 'string',
+}
+
+const useStyle = createUseStyles({
+  editor: {
+    minHeight: 400,
+  },
+})
+
 const App = defineComponent({
   setup() {
-    const state = reactive({
-      name: 'xin',
-    })
+    const schemaRef: Ref<any> = ref(schema)
 
-    // setInterval(() => {
-    //   state.name += '1'
-    // }, 1000)
+    const handleCodeChange = (code: string) => {
+      let schema: any
+      try {
+        schema = JSON.parse(code)
+      } catch (err) {}
+      schemaRef.value = schema
+    }
 
     return () => {
+      const code = toJson(schemaRef.value)
+
       return (
-        <div id="app">
-          <img src={img} alt="Vue logo" />
-          <p>{state.name}</p>
-          <input type="text" v-model={state.name} />
-          {returnHelloWorld(12)}
+        <div>
+          <MonacoEditor code={code} onChange={handleCodeChange} />
         </div>
       )
     }
