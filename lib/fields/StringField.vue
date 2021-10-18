@@ -3,7 +3,7 @@
 </template>
 
 <script lang="ts" setup>
-import { defineProps, PropType } from 'vue'
+import { defineProps } from 'vue'
 import { FiledPropsDefine } from '../types'
 
 const props = defineProps(FiledPropsDefine)
