@@ -1,0 +1,15 @@
+<template>
+  <input type="text" :value="value" @input="handleChange" />
+</template>
+
+<script lang="ts" setup>
+import { defineProps, PropType } from 'vue'
+import { FiledPropsDefine } from '../types'
+
+const props = defineProps(FiledPropsDefine)
+
+const handleChange = (e: any) => {
+  console.log(e)
+  props.onChange(e.target.value)
+}
+</script>
