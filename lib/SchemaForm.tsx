@@ -1,4 +1,4 @@
-import { defineComponent, PropType, provide } from 'vue'
+import { defineComponent, PropType, provide, reactive } from 'vue'
 import { Schema, SchemaTypes } from './types'
 import SchemaItems from './SchemaItems'
 
@@ -24,12 +24,16 @@ export default defineComponent({
       props.onChange(v)
     }
 
-    const context = {
+    const context: any = reactive({
       SchemaItems,
-    }
+    })
 
     provide(SchemaFormContextKey, context)
 
+    // let index = 1
+    // setInterval(() => {
+    //   context.SchemaItems = index++
+    // }, 500)
     return () => {
       const { schema, value } = props
       return (
