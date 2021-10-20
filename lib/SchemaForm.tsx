@@ -1,6 +1,6 @@
-import { defineComponent, PropType, provide, reactive } from 'vue'
-import { Schema, SchemaTypes } from './types'
-import SchemaItems from './SchemaItems'
+import { defineComponent, PropType, provide, markRaw } from 'vue'
+import { Schema } from './types'
+import SchemaItem from './SchemaItem'
 
 import { SchemaFormContextKey } from './context'
 
@@ -24,20 +24,16 @@ export default defineComponent({
       props.onChange(v)
     }
 
-    const context: any = reactive({
-      SchemaItems,
+    const context: any = markRaw({
+      SchemaItem,
     })
 
     provide(SchemaFormContextKey, context)
 
-    // let index = 1
-    // setInterval(() => {
-    //   context.SchemaItems = index++
-    // }, 500)
     return () => {
       const { schema, value } = props
       return (
-        <SchemaItems
+        <SchemaItem
           schema={schema}
           value={value}
           rootSchema={schema}

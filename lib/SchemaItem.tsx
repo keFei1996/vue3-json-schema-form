@@ -47,6 +47,8 @@ export default defineComponent({
         }
       }
 
+      console.log('Component', Component)
+
       return <Component {...props} schema={retrieveSchema} />
     }
   },
