@@ -141,7 +141,6 @@ export default defineComponent({
     }
 
     return () => {
-      debugger
       const { schema, rootSchema, value } = props
 
       const SchemaItem = context.SchemaItem
