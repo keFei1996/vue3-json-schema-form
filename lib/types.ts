@@ -71,3 +71,15 @@ export const TypeHelperComponent = defineComponent({
 })
 
 export type CommonFieldType = typeof TypeHelperComponent
+
+const CommonWidgetPropsDefine = {
+  value: {},
+  onChange: {
+    type: Function as PropType<(v: any) => void>,
+    required: true,
+  },
+} as const
+
+// export interface Theme {
+//   widgets: {}
+// }
